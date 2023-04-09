@@ -1,6 +1,6 @@
 const express = require("express");
 const route = express.Router();
-const task = require("../models/task.model");
+const Task = require("../models/task.model");
 
 //retrieve task list
 route.get("/", (req, res) => {

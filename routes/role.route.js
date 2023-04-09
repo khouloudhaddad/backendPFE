@@ -73,10 +73,10 @@ route.put("/:id", async (req, res) => {
         return res.status(200).json(role);
       })
       .catch((err) => {
-        console.log("Unable to delete role", err);
+        console.log("Unable to delete user", err);
         res
           .status(400)
-          .json({ message: `Unable to delete role with id ${id} !!` });
+          .json({ message: `Unable to delete user with id ${id} !!` });
       });
   });
   

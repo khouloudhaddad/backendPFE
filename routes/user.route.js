@@ -33,16 +33,17 @@ route.get("/:id", (req, res) => {
 
 //create new User
 route.post("/", (req, res) => {
+  console.log("===>");
   let userInfo = req.body;
   User.create({
     full_name: userInfo.full_name,
     email: userInfo.email,
     username: userInfo.username,
-    status: false,
+    status_id: userInfo.status_id,
     password: userInfo.password,
     phone: userInfo.phone,
-    role: userInfo.role
-    })
+    role_id: userInfo.role_id,
+  })
     .then((user) => {
       console.log("Created User: ", user);
       res.status(201).json(user);
@@ -85,6 +86,5 @@ route.delete("/:id", async (req, res) => {
         .json({ message: `Unable to delete user with id ${id} !!` });
     });
 });
-
 
 module.exports = route;
