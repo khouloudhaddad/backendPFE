@@ -2,12 +2,16 @@ const express = require("express");
 const route = express.Router();
 //import User Model
 const User = require("../models/user.model");
+const moment = require('moment');
 
 //get Users list
 route.get("/", (req, res) => {
   User.find({})
     .then((users) => {
+    00
       console.log("Users List: ", users);
+      
+      //res.render('pages/users', {title: 'Users list',users: users, moment}); 
       res.status(200).json(users);
     })
     .catch((err) => {

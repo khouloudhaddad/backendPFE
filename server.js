@@ -30,7 +30,15 @@ mongoose
     console.log("Failed To connect to Database");
   });
 // /Connection to Mongo DB
+
+//templating 
+//app.set('view engine', 'ejs')
+
 app.use(express.static(path.join(__dirname, "www")));
+// app.get('/', (req, res) => {
+//   res.render('pages/index')
+// })
+
 app.use("/roles", roleRoute);
 app.use("/permissions", permissionRoute);
 app.use("/users", userRoute);
