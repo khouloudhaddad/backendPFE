@@ -14,6 +14,9 @@ const roleRoute = require("./routes/role.route");
 const permissionRoute = require("./routes/permission.route");
 const userRoute = require("./routes/user.route");
 const taskRoute = require("./routes/task.route");
+const taskTypesRoute = require("./routes/taskType.route");
+const taskStatusRoute = require("./routes/taskStatus.route")
+const commentsRoute = require('./routes/comment.route')
 
 //Connection to Mongo DB
 mongoose
@@ -32,6 +35,9 @@ app.use("/roles", roleRoute);
 app.use("/permissions", permissionRoute);
 app.use("/users", userRoute);
 app.use("/tasks", taskRoute);
+app.use("/task-types", taskTypesRoute)
+app.use("/task-status", taskStatusRoute)
+app.use("/comments", commentsRoute)
 
 app.listen(process.env.PORT, () => {
   console.log(`Server running on port ${process.env.PORT}`);
