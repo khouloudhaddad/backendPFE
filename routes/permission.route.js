@@ -17,7 +17,7 @@ route.get("/", (req, res) => {
 
 //get permissions by ID
 route.get("/:id", (req, res) => {
-  Permissions.findById(req.params.id)
+  Permission.findById(req.params.id)
     .then((permissions) => {
       console.log("Permissions : ", permissions);
       res.status(200).json(permissions);
@@ -46,13 +46,13 @@ route.post("/", (req, res) => {
 
 //Update permission
 route.put("/:id", async (req, res) => {
-  let userInfo = req.body;
+  let permissionInfo = req.body;
   const { id } = req.params;
 
-  await User.updateOne({ _id: id }, userInfo)
-    .then((user) => {
+  await Permission.updateOne({ _id: id }, permissionInfo)
+    .then((permission) => {
       console.log("Updated Permission: ", permission);
-      res.status(200).json(user);
+      res.status(200).json(permission);
     })
     .catch((err) => {
       console.log("Unable to update permission", err);
