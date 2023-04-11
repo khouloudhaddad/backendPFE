@@ -2,12 +2,16 @@ const express = require("express");
 const route = express.Router();
 //import User Model
 const User = require("../models/user.model");
+const moment = require('moment');
 
 //get Users list
 route.get("/", (req, res) => {
   User.find({})
     .then((users) => {
+    00
       console.log("Users List: ", users);
+      
+      //res.render('pages/users', {title: 'Users list',users: users, moment}); 
       res.status(200).json(users);
     })
     .catch((err) => {
@@ -33,16 +37,17 @@ route.get("/:id", (req, res) => {
 
 //create new User
 route.post("/", (req, res) => {
+  console.log("===>");
   let userInfo = req.body;
   User.create({
     full_name: userInfo.full_name,
     email: userInfo.email,
     username: userInfo.username,
-    status: false,
+    status_id: userInfo.status_id,
     password: userInfo.password,
     phone: userInfo.phone,
-    role: userInfo.role
-    })
+    role_id: userInfo.role_id,
+  })
     .then((user) => {
       console.log("Created User: ", user);
       res.status(201).json(user);
@@ -85,6 +90,5 @@ route.delete("/:id", async (req, res) => {
         .json({ message: `Unable to delete user with id ${id} !!` });
     });
 });
-
 
 module.exports = route;

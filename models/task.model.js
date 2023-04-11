@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const User = require('./user.model');
 const Comment = require('./comment.model');
 const TaskType = require('./taskType.model');
-const TaskStatus = require('./models/taskStatus.model');
+const TaskStatus = require('./taskStatus.model');
 
 const TaskSchema = mongoose.Schema({
   //_id: Schema.Types.ObjectId,

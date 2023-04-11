@@ -1,6 +1,6 @@
 const express = require('express');
 const route = express.Router();
-const TaskType = require('../models/TaskType.model');
+const TaskType = require('../models/taskType.model');
 
 
 //retrieve TaskTypes list
