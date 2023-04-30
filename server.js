@@ -2,6 +2,8 @@ const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const connectDB = require('./config/db')
+
 require("dotenv").config();
 
 const app = express();
@@ -19,16 +21,7 @@ const taskStatusRoute = require("./routes/taskStatus.route")
 const commentsRoute = require('./routes/comment.route')
 
 //Connection to Mongo DB
-mongoose
-  .connect(
-    "mongodb+srv://sarah_henia:cherrimongoli21S@clustersh.2ptpd2k.mongodb.net/Taskify?retryWrites=true&w=majority"
-  )
-  .then(() => {
-    console.log("Connected to Database");
-  })
-  .catch(() => {
-    console.log("Failed To connect to Database");
-  });
+connectDB() 
 // /Connection to Mongo DB
 
 //templating 
