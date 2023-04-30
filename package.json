@@ -13,11 +13,13 @@
     "nodemon": "^2.0.22"
   },
   "dependencies": {
+    "colors": "^1.4.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "ejs": "^3.1.9",
     "env": "^0.0.2",
     "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
     "express-fileupload": "^1.4.0",
     "moment": "^2.29.4",
     "mongoose": "^7.0.3"
